@@ -225,8 +225,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244189274}
-  - component: {fileID: 244189273}
   - component: {fileID: 244189275}
+  - component: {fileID: 244189273}
   m_Layer: 0
   m_Name: Spawning
   m_TagString: Untagged
@@ -234,21 +234,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &244189273
-MonoBehaviour:
+--- !u!135 &244189273
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244189272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed3bd66f0c2dd743913737167dffb41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 4
-  amountToSpawn: 5
-  spawnHeight: 10
+  serializedVersion: 2
+  m_Radius: 3.7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &244189274
 Transform:
   m_ObjectHideFlags: 0
@@ -257,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244189272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3335591, y: 6.45, z: 4.653738}
+  m_LocalPosition: {x: 0.3335591, y: 16.5, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -275,17 +273,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e65dd90be12474382f6bb5220c8f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Trash: {fileID: 5359227774541277042, guid: a5a8489f4827f18439df603e7759a7e8, type: 3}
-  Trashs:
-  - {fileID: 5869393832083262203, guid: 9beb898183ad87245a52fef20e2543fc, type: 3}
+  Trash:
   - {fileID: 5359227774541277042, guid: a5a8489f4827f18439df603e7759a7e8, type: 3}
   - {fileID: 5869393832083262203, guid: 9beb898183ad87245a52fef20e2543fc, type: 3}
-  - {fileID: 5359227774541277042, guid: a5a8489f4827f18439df603e7759a7e8, type: 3}
-  - {fileID: 5869393832083262203, guid: 9beb898183ad87245a52fef20e2543fc, type: 3}
-  spawnAmount: 5
-  spawnHeight: 10
-  startDelay: 5
-  spawnInterwal: 4
+  trashSpawnBoundsRadius: 5
+  spawnedTrash: 5
+  repeatRateOnStart: 2
 --- !u!1 &972288808
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3679204391379980262, guid: 5537c298981e0ed4998caa5d8788a0d8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3679204391379980262, guid: 5537c298981e0ed4998caa5d8788a0d8, type: 3}
       propertyPath: m_Center.x
@@ -663,5 +656,7 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.0500002
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3679204391379980262, guid: 5537c298981e0ed4998caa5d8788a0d8, type: 3}
+    - {fileID: 1999887520744333832, guid: 5537c298981e0ed4998caa5d8788a0d8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5537c298981e0ed4998caa5d8788a0d8, type: 3}

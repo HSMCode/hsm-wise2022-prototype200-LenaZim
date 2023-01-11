@@ -5,68 +5,52 @@ using UnityEngine;
 public class SpawnTrash : MonoBehaviour
 
 {
-public  GameObject Trash;
-public GameObject [] Trashs;
+    //Array for trash Prefabs to Randomly choose from 
+[SerializeField] GameObject [] Trash;
+[SerializeField] float trashSpawnBoundsRadius;
+ 
+// counter for spawned trash
+[SerializeField] int spawnedTrash;
 
-    // Var for spawn ammount of method
-    public int spawnAmount = 1;
-    
+// This repeat rate is only changeable before starting the scene, to change the repeat rate on runtime we need a different solution
+[SerializeField] float repeatRateOnStart = 2f;
 
-    // Variables for radomizing position
-   
-   
-   
-    // public float spawnPositionXa = 4;
-    // public float spawnPositionXb = 4;
-    // public float spawnPositionZa = 4;
-    // public float spawnPositionZb = 4;
-
-    public float spawnHeight; 
-
-    /// Variables Invoke Repeating
-    public float startDelay= 5f;
-    public float spawnInterwal = 50f;
-
-    // Start is called before the first frame update
+// Start is called before the first frame update
     void Start()
     {
-        SpawningTrashParam(spawnAmount);
+    // With Invoke Repeating only the parameters generated inside the method can be controlled
+    InvokeRepeating("SpawningTrash", 3f, repeatRateOnStart);
     }
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 GenerateSpawnPosition()
     {
+        // Get radius from SphereCollider
+        var collider = GetComponent<SphereCollider>();
+        trashSpawnBoundsRadius = collider.radius;
+
+        // Create a random Trash spawn position
+         Vector3 trashSpawnPos = new Vector3(Random.Range(-trashSpawnBoundsRadius, trashSpawnBoundsRadius), 0,
+            Random.Range(-trashSpawnBoundsRadius, trashSpawnBoundsRadius));
+        // Check if random position is inside the collider, if not update position to closest point available
+        Vector3 trashSpawnPosClosest = collider.ClosestPoint(trashSpawnPos);
+
+        // Debug Log to check coordinates
+        Debug.Log("Random Pos: " + trashSpawnPos + "Closest Position to Collider : " + trashSpawnPosClosest);
         
+        return trashSpawnPosClosest;
     }
-    void SpawningTrashParam(int amount)
+    void SpawningTrash()
     {
-        for (int i = 0; i < amount; i++)
-         {
-             // generate random spawn position between the defined values
-            Vector3 spawnPosition = new Vector3(0,spawnHeight,0);
-            
-            //spawnHeight,RandomRange(-spawnPositionZa,spawnPositionZa);
-            
-            //new Vector3(Random.Range(-spawnPositionXa, spawnPositionXb),spawnHeight ,Random.Range(-spawnPositionZa,spawnPositionZb));
 
-            // instantiate decoy
-            Instantiate(Trash, spawnPosition, Trash.transform.rotation);
-         }
+            // Get a random slot from the enemy prefab array
+            int number = Random.Range(0, Trash.Length);
+
+            // Instantiate a clone from the prefab enemies at the previously generated position
+            Instantiate(Trash[number], GenerateSpawnPosition(), Trash[number].transform.rotation);
+
+            spawnedTrash++;
     }
 }
 
-// void SpawningEnemy()
-    // {
-    //         for (int i = 0; i < 5; i++)
-    //         {
-    //             int enemysIndex = Random.Range(0,Enemys.Length);
-
-    //             // generate random spawn position between the defined values
-    //             Vector3 spawnPosition = new Vector3(Random.Range(-spawnPositionXa, spawnPositionXb),0 ,Random.Range(-spawnPositionZa,spawnPositionZb));
-
-    //             // instantiate decoy
-    //             Instantiate(Enemys[enemysIndex],spawnPosition,Enemys[enemysIndex].transfom.rotation);
-    //         }
-    // }
 
     
