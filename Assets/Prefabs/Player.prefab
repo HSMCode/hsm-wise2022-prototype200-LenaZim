@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4272056783285924201}
   - component: {fileID: 2696577338941196358}
   - component: {fileID: 892930638972501555}
-  - component: {fileID: 3277155553953644813}
+  - component: {fileID: 5668802661453653311}
   m_Layer: 0
   m_Name: Ratte
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208129082898032256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.66145, y: -2.91, z: -0.25}
-  m_LocalScale: {x: 0.86970073, y: 1.0278283, z: 1.0541828}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1750763611891000105}
   m_RootOrder: 0
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3277155553953644813
+--- !u!136 &5668802661453653311
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,6 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1750763611891000105}
+  - component: {fileID: 6648017674755827111}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -120,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812052939033387693}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3614499, y: 3.9089787, z: -0.38817388}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4272056783285924201}
@@ -128,6 +129,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6648017674755827111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812052939033387693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687711e7dacb10042b01b94835154897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 250
+  speed: 7
 --- !u!1 &6146512897283790166
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +155,7 @@ GameObject:
   - component: {fileID: 8214797353344710168}
   - component: {fileID: 7041988632412900637}
   - component: {fileID: 1670358639405360222}
+  - component: {fileID: 9075005407177312995}
   m_Layer: 0
   m_Name: Korb
   m_TagString: Untagged
@@ -155,8 +171,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6146512897283790166}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.05, y: -2.92, z: -0.21}
-  m_LocalScale: {x: 0.91478926, y: 0.5671484, z: 0.7428663}
+  m_LocalPosition: {x: 0.75, y: 0.75, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.5, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1750763611891000105}
   m_RootOrder: 1
@@ -223,3 +239,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9075005407177312995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6146512897283790166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565de9cf59ece6d4da9244e29ab346a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
