@@ -8,6 +8,7 @@ TagManager:
   - Collecter
   - Ingredient
   - Trash
+  - Pizza
   layers:
   - Default
   - TransparentFX
