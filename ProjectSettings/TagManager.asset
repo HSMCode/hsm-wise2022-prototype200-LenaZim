@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Center
+  - Collecter
+  - Ingredient
+  - Trash
+  - Pizza
   layers:
   - Default
   - TransparentFX

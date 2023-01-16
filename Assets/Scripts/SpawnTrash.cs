@@ -35,7 +35,7 @@ public class SpawnTrash : MonoBehaviour
         Vector3 trashSpawnPosClosest = collider.ClosestPoint(trashSpawnPos);
 
         // Debug Log to check coordinates
-        Debug.Log("Random Pos: " + trashSpawnPos + "Closest Position to Collider : " + trashSpawnPosClosest);
+        // Debug.Log("Random Pos: " + trashSpawnPos + "Closest Position to Collider : " + trashSpawnPosClosest);
         
         return trashSpawnPosClosest;
     }
