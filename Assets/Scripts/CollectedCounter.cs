@@ -10,7 +10,7 @@ public class CollectedCounter : MonoBehaviour
     public int CurrentIngredients;
 
     private Text ingredientsUI;
-    private string ingredientsText = "Ingredients collected:  ";
+    private string ingredientsText = "Cheese wasted:  ";
 
     // for trash
     public int TrashCount;
