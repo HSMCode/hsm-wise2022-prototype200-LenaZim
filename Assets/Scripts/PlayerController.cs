@@ -33,4 +33,5 @@ public class PlayerController : MonoBehaviour
             transform.Translate(-step,0,0, Space.World);
         }
     }
+ 
 }

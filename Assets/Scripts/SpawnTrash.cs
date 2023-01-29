@@ -34,8 +34,6 @@ public class SpawnTrash : MonoBehaviour
         // Check if random position is inside the collider, if not update position to closest point available
         Vector3 trashSpawnPosClosest = collider.ClosestPoint(trashSpawnPos);
 
-        // Debug Log to check coordinates
-        // Debug.Log("Random Pos: " + trashSpawnPos + "Closest Position to Collider : " + trashSpawnPosClosest);
         
         return trashSpawnPosClosest;
     }
